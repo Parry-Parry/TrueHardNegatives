@@ -20,7 +20,7 @@ def dataset_from_idx(dataset, triplets=None, cut=None, RND=42, nproc=1):
     
         return frame[['query', 'pid', 'nid']]
 
-def iterate(df, style='t5'):
+def iterate(df, style='triplet'):
     assert style in ['t5', 'triplet'], "Style must be either 't5' or 'triplet'"
     def t5_style():  
         OUTPUTS = ['true', 'false'] 
