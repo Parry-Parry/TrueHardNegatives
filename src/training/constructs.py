@@ -1,6 +1,6 @@
 import pandas as pd
 
-def dataset_from_idx(dataset, triplets=None, cut=None, RND=42, nproc=1):
+def dataset_from_idx(dataset, triplets=None, cut=None, RND=42, nproc=0):
     frame = pd.DataFrame(dataset.docpairs_iter()) if not triplets else triplets
     docs = pd.DataFrame(dataset.docs_iter()).set_index('doc_id').text.to_dict()
     queries = pd.DataFrame(dataset.queries_iter()).set_index('query_id').text.to_dict()
